@@ -1,3 +1,4 @@
+![Movie Analysis Banner](images/movie_analysis_banner.jpg)
 # Microsoft Movie Analysis
 
 **Author**: Bijal Saija
@@ -76,8 +77,8 @@ Describe the structure of your repository and its contents, for example:
 
 ```
 ├── README.md                           <- The top-level README for reviewers of this project
-├── dsc-phase1-project-template.ipynb   <- Narrative documentation of analysis in Jupyter notebook
-├── DS_Project_Presentation.pdf         <- PDF version of project presentation
-├── data                                <- Both sourced externally and generated from code
+├── microsoft_movie_analysis.ipynb      <- Narrative documentation of analysis in Jupyter notebook
+├── microsoft_movie_analysis.pdf        <- PDF version of project presentation
+├── zippedData                          <- Data repositories sourced externally
 └── images                              <- Both sourced externally and generated from code
 ```
