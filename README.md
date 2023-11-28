@@ -1,4 +1,4 @@
-![Movie Analysis Banner](images/movie_analysis_banner.jpg)
+![Movie Analysis Banner](images/kc_house_analysis.png)
 # House sales in a northwestern county
 
 **Author**: Bijal Saija
