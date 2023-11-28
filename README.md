@@ -1,5 +1,5 @@
 ![Movie Analysis Banner](images/kc_house_analysis.png)
-# House sales in a northwestern county
+#  Regression modeling to analyze house sales in a northwestern county
 
 **Author**: Bijal Saija
 
