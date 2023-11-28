@@ -1,50 +1,55 @@
 ![Movie Analysis Banner](images/movie_analysis_banner.jpg)
-# Microsoft Movie Analysis
+# House sales in a northwestern county
 
 **Author**: Bijal Saija
 
 ## Overview
 
-Microsoft has decided to create a new movie studio and requires more insight into which types of films are doing best at the box office. This project uses descriptive statistical analysis of data gathered from the IMDb website to gain insight into which combination of genres or which are the most popular genres in today's generation over the last few years. Three separate datasets were used for this analysis to gain insight into which combination genres of movies topped the total gross, had the top average ratings movie genres, and best studio's top-grossed genres. The results of the top 20 combination genres in highest-grossed movies, top rating movies, and highest-grossed movies in the last 15 years combination of Action, Adventure, and sci-fi, with adventure being present in the majority of the top 20 of the 3 categories. My recommendation for which type of Movie to produce would be Action, Adventure, or sci-fi as this is the most predominant combination in the analysis by top-grossed movies, there were 260 unique genre combinations in this data set after cleaning. I recommend that Adventure and Action paired with either Animation or Fantasy is a successful combination which I have analysed by top studio's top 10 movies. In total gross, the combination of Adventure, Animation, and comedy also faired well which would be my third recommendation. Adventure was a strong genre for popular successful movies.
-
+This data science project aims to address a critical business problem for our stakeholders, a real estate agency specializing in helping homeowners buy and sell homes. The primary focus is on providing valuable insights and advice to homeowners regarding how home renovations may impact the estimated value of their properties. I have used regression modeling to analyze house sales in a northwestern county for this project.
 ## Business Problem
 
-Microsoft wants to produce movies that are going to be successful to make profits, they want to know which types of movies are the most successful. To answer that question, domestic and Foreign Sales data was analyzed to see the most financially successful genres, along with the average rating and popularity over the years for each type or genre of movie to see how popularity compared with financial success.
-
+The key business problem identified is the need to empower homeowners with actionable information about potential home renovations. The goal is to guide them in making informed decisions that can enhance the market value of their homes. By understanding the potential impact of specific renovations on the estimated property value, homeowners can prioritize and plan renovations strategically.
 
 ***
 
 ## Data
 
-The data analyzed came from the IMDb website. IMDb (an acronym for Internet Movie Database) is a popular worldwide online database of information relating to all movies, television programs, video games, and streaming content online. I used 3 files from IMDb to answer the question of which genres were most successful, mainly focusing on the Domestic and Foreign Gross sales along with average ratings given and release year of popularity genres.
+This project uses the King County House Sales dataset, which can be found in kc_house_data.csv
+As with most real-world data sets, the column names were not perfectly described, so have done some research and I have used only those columns that affect house prices. 
 
-After checking the information on each table to see column names and null values, I joined the two datasets, df_titles_basic_info and df_ratings together using the 'tconst' column as it was a unique identifier creating a new data frame called inner_merge. I then joined the dataset tn.movie_budgets with the new data frame using the title as the unique identifier, creating a combined new dataset called df49 using 'title' & 'movie'.
+So after deciding what feature from the dataset to use and how to use it. The selected features are as below:
+price
+bedrooms
+bathrooms
+sqft_living
+sqft_lot 
+floors
+condition
+grade
+yr_built
 
-Checking the information on the new data frame complete_df, I then cleaned up the null values by removing them, tidied up the "Domestic Gross' and 'Foreign Gross' columns, and converted them to units of $ millions for easier readability and analysis. The columns"studio", "original title", and the original domestic and foreign gross columns were deleted as they were not required to carry out this analysis.
+Checking the information on the new data, I then dropped the unwanted data like id. This dataset will serve as the foundation for training and evaluating the predictive model.
 ***
 
 ## Methods
 
-The data analyzed came from the IMDb website. IMDb (an acronym for Internet Movie Database) is a popular worldwide online database of information relating to all movies, television programs, video games, and streaming content online. I used 3 files from IMDb to answer the question of which genres were most successful, mainly focusing on the Domestic and Foreign Gross sales along with average ratings given and number of votes received. Describe the process for analyzing or modeling the data.
+The project follows a data science lifecycle, encompassing data exploration, preprocessing, model development, and evaluation. The choice of algorithms, feature engineering techniques, and evaluation metrics will be explained in detail.
 
 ***
-After checking the information on each table to see column names and null values, I joined the two datasets, imdb.title.basics and imdb.title.ratings together using the 'tconst' column as it was a unique identifier creating a new data frame called inner_merge. I then joined the dataset tn.movie_budgets with the new data frame using the title as the unique identifier, creating a combined new dataset called df14.
+After checking the plot of each column there were so many outliers, that I decided to remove them as they can misguide the model to work properly. 
 
-Checking the information on the new dataframe df14, I then cleaned up the null values by removing them, tidied up the "Domestic Gross' and 'Foreign Gross' columns and created totl_gross column converted them to units of $ millions for easier readability and analysis. The columns "original title", and the original domestic and foreign gross columns were deleted as they were not required to carry out this analysis.
+Developed a predictive model that estimates the impact of different types of home renovations on the overall value of a property.
+Identified and analyzed relevant features within the dataset that significantly contribute to the estimated property value.
+Created a recommendation system that suggests the most beneficial renovations based on the unique characteristics of each home.
 ***
 
 ## Results
 
-3 of the above graphs, top 10 rating genres,top 10 genres of top grossed movies and top genres of last 15 years clearly show that Adventure, Action and Sci-Fi combination are most successful in Domestic and Foreign Gross Sales and also in the average rating given. Its clear also to see that the adventure genre is popular across the board especially when elements of animation, action and or comedy are also included.
+Predictive Model: A machine learning model capable of estimating the impact of home renovations on property value.
 
-The 4th graph showing line graph of top 5 genres over the years top grossed genre action as solo genre.
+Recommendation System: A system that provides personalized recommendations for home renovations based on the dataset analysis.
 
-To improve confidence in the results next time I would:-
-
-Include the movie classification This could have narrowed down the target audience the most successful movies were aimed at i.e PG etc.
-
-Will check number of votes in different age group, see if audience tastes change by age.
-
+Documentation: Comprehensive documentation detailing the methodology, code structure, and explanations of key decisions made during the project.
 
 
 ***
@@ -55,16 +60,51 @@ Will check number of votes in different age group, see if audience tastes change
 
 ## Conclusions
 
-This analysis leads to three recommendations regarding types of movies that are successful:-
+This analysis leads to three features that can lead to price rise:-
 
-Movies with the genre combination Action, Adventure & Sci-Fi topped the leaderboard in both Domestic and Foreign Gross Sales, this combination is obviously a hit at the box office worldwide, make this the first type of movie to produce for success.
-Movies with Adventure, Animation and Comedy were the next most successful in top rated movies, use this combination as the next or alternative type of movie to produce.
-Movies in the top 20 recent years yielded slighly different results but Action, Adventure and Sci-Fi combination did come out 1st still.
-Adventure genre seems constant in all the above graphs so must be a key element of any movie to be produced.
+Checked for multicollinearity and had to remove if there was any in between two independent variables but there was not more than 0.7.
+
+R-squared: 0.508
+This indicates the proportion of the variance in the dependent variable (price) that is predictable from the independent variables. In this case, approximately 50.8% of the variability in the home prices is explained by the model.
+Adjusted R-squared: 0.508
+Similar to R-squared but adjusted for the number of predictors in the model. It provides a more accurate measure in the presence of multiple predictors.
+Observations: 13,604
+
+Degrees of Freedom (Df):
+
+Residuals: 13,595
+Model: 8
+Total: 13,603
+F-statistic: 1757.0
+
+A measure of how well the overall model fits the data. A higher F-statistic suggests a better fit.
+Prob (F-statistic): 0.00
+
+The p-value is associated with the F-statistic. A low p-value indicates that the model is statistically significant.
+Coefficients:
+Intercept (const): 4.558e+05
+Coefficients for Predictors:
+sqft_living, sqft_lot, bedrooms, bathrooms, floors, grade, condition, yr_built
+Each coefficient represents the change in the dependent variable (price) per one-unit change in the respective independent variable, holding other variables constant.
+Statistical Significance:
+t-statistic and P>|t|:
+Indicates the statistical significance of each coefficient. The lower the p-value, the more significant the predictor. In this case, all predictors seem to be statistically significant (p-value < 0.05).
+Model Fit:
+AIC (Akaike Information Criterion): 3.6e+05
+BIC (Bayesian Information Criterion): 3.601e+05
+Information criteria that penalize models for complexity. Lower values indicate a better fit.
+Residuals:
+Omnibus: 721.155
+Durbin-Watson: 2.008
+Jarque-Bera (JB): 1023.301
+Tests for normality and autocorrelation of residuals. A low Durbin-Watson suggests potential autocorrelation.
+Notes:
+Standard Errors: Assume that the covariance matrix of the errors is correctly specified.
+This summary provides a comprehensive overview of the linear regression model, its fit to the data, and the statistical significance of each predictor. It suggests that the model explains a substantial portion of the variance in home prices, and the included predictors are statistically significant.
+
 Questions to consider:
 
-Limitations-Could the same movie be classified into different genres by different audiences? Who classifies the genres for each movie? Can the classification of genres be improved to provide a more benchmark approach?
-Future analysis could include the movie classification ie PG, MA etc to see which audience the most successful movies were made for.
+Further analysis may include checking for model assumptions and exploring the residuals in more detail.
 ***
 
 
