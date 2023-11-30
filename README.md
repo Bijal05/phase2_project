@@ -62,27 +62,27 @@ Documentation: Comprehensive documentation detailing the methodology, code struc
 
 This analysis leads to three features that can lead to price rise:-
 
-Checked for multicollinearity and had to remove if there was any in between two independent variables but there was not more than 0.7.
+Checked for multicollinearity in between two continuous independent variables and had to remove if there is any so the feature we have to drop was sqft_above. The correlation was 0.8 for sqft_living and sqft_above.
 
-R-squared: 0.508
-This indicates the proportion of the variance in the dependent variable (price) that is predictable from the independent variables. In this case, approximately 50.8% of the variability in the home prices is explained by the model.
-Adjusted R-squared: 0.508
+R-squared: 0.509
+This indicates the proportion of the variance in the dependent variable (price) that is predictable from the independent variables. In this case, approximately 50.9% of the variability in the home prices is explained by the model.
+Adjusted R-squared: 0.509
 Similar to R-squared but adjusted for the number of predictors in the model. It provides a more accurate measure in the presence of multiple predictors.
 Observations: 13,604
 
 Degrees of Freedom (Df):
 
-Residuals: 13,595
-Model: 8
-Total: 13,603
-F-statistic: 1757.0
+Residuals: 13,553
+Model: 18
+Total: 13,572
+F-statistic: 780.0
 
 A measure of how well the overall model fits the data. A higher F-statistic suggests a better fit.
 Prob (F-statistic): 0.00
 
 The p-value is associated with the F-statistic. A low p-value indicates that the model is statistically significant.
 Coefficients:
-Intercept (const): 4.558e+05
+Intercept (const): 4.545e+05
 Coefficients for Predictors:
 sqft_living, sqft_lot, bedrooms, bathrooms, floors, grade, condition, yr_built
 Each coefficient represents the change in the dependent variable (price) per one-unit change in the respective independent variable, holding other variables constant.
@@ -91,12 +91,12 @@ t-statistic and P>|t|:
 Indicates the statistical significance of each coefficient. The lower the p-value, the more significant the predictor. In this case, all predictors seem to be statistically significant (p-value < 0.05).
 Model Fit:
 AIC (Akaike Information Criterion): 3.6e+05
-BIC (Bayesian Information Criterion): 3.601e+05
+BIC (Bayesian Information Criterion): 3.592e+05
 Information criteria that penalize models for complexity. Lower values indicate a better fit.
 Residuals:
-Omnibus: 721.155
+Omnibus: 713.538
 Durbin-Watson: 2.008
-Jarque-Bera (JB): 1023.301
+Jarque-Bera (JB): 1027.241
 Tests for normality and autocorrelation of residuals. A low Durbin-Watson suggests potential autocorrelation.
 Notes:
 Standard Errors: Assume that the covariance matrix of the errors is correctly specified.
@@ -117,8 +117,8 @@ Describe the structure of your repository and its contents, for example:
 
 ```
 ├── README.md                           <- The top-level README for reviewers of this project
-├── microsoft_movie_analysis.ipynb      <- Narrative documentation of analysis in Jupyter notebook
-├── microsoft_movie_analysis.pdf        <- PDF version of project presentation
-├── zippedData                          <- Data repositories sourced externally
+├── p2p.ipynb                           <- Narrative documentation of analysis in Jupyter notebook
+├── phase2_project_presentation.pdf     <- PDF version of project presentation
+├── data                                <- Data repositories sourced externally
 └── images                              <- Both sourced externally and generated from code
 ```
