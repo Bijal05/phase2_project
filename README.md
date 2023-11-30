@@ -117,8 +117,8 @@ Describe the structure of your repository and its contents, for example:
 
 ```
 ├── README.md                           <- The top-level README for reviewers of this project
-├── p2p.ipynb      <- Narrative documentation of analysis in Jupyter notebook
-├── phase2_project.pdf        <- PDF version of project presentation
-├── zippedData                          <- Data repositories sourced externally
+├── p2p.ipynb                           <- Narrative documentation of analysis in Jupyter notebook
+├── phase2_project_presentation.pdf     <- PDF version of project presentation
+├── data                                <- Data repositories sourced externally
 └── images                              <- Both sourced externally and generated from code
 ```
